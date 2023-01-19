@@ -32,9 +32,9 @@ module debouncer_tb();
         `ifdef IVERILOG
             $dumpfile("debouncer_tb.fst");
             $dumpvars(0, debouncer_tb);
-            for(z = 0; z < `DEBOUNCER_WIDTH; z = z + 1) begin
-                $dumpvars(0, DUT.saturating_counter[z]);
-            end
+            // for(z = 0; z < `DEBOUNCER_WIDTH; z = z + 1) begin
+            //     $dumpvars(0, DUT.saturating_counter[z]);
+            // end
         `endif
         `ifndef IVERILOG
             $vcdpluson;
