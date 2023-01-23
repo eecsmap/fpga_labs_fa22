@@ -68,8 +68,8 @@ module z1top (
     nco nco (
         .clk(CLK_125MHZ_FPGA),
         .rst(rst),
-        //.fcw(fcw),
-        .fcw(24'd60508),
+        .fcw(fcw),
+        //.fcw(24'd60508),
         .next_sample(next_sample),
         .code(nco_code)
     );

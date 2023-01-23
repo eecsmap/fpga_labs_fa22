@@ -11,10 +11,10 @@ module fcw_ram(
 
     always @(posedge clk) begin
         if (rst) begin
-            ram[0] <= 24'd0; // replace the RAM reset values with the values you computed
-            ram[1] <= 24'd0;
-            ram[2] <= 24'd0;
-            ram[3] <= 24'd0;
+            ram[0] <= 24'd60508; // replace the RAM reset values with the values you computed
+            ram[1] <= 24'd67934;
+            ram[2] <= 24'd71922;
+            ram[3] <= 24'd80723;
         end
         else if (wr_en)
             ram[addr] <= d_in;
