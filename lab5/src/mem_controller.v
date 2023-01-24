@@ -64,11 +64,11 @@ module mem_controller #(
     
     /* initial values to avoid latch synthesis */
 
-    case (curr_state)
+    // case (curr_state)
 
-      /* next state logic */
+    //   /* next state logic */
 
-    endcase
+    // endcase
 
   end
 
@@ -76,11 +76,11 @@ module mem_controller #(
     
     /* initial values to avoid latch synthesis */
     
-    case (curr_state)
+    // case (curr_state)
 
-      /* output and mem signal logic */
+    //   /* output and mem signal logic */
       
-    endcase
+    // endcase
 
   end
 
