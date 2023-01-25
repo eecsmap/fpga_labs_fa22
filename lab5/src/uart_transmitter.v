@@ -41,7 +41,7 @@ module uart_transmitter #(
         if (reset) begin
             bit_counter <= 0;
         end else if (start) begin
-            tx_shift <= {1'b1, data_in, 1'b0};
+            
             bit_counter <= 10;
         end else if (symbol_edge && tx_running) begin
             bit_counter <= bit_counter - 1;
@@ -51,7 +51,8 @@ module uart_transmitter #(
     // shift sending bit
     reg [9:0] tx_shift;
     always @(posedge clk) begin
-        if (symbol_edge && tx_running) tx_shift <= tx_shift >> 1;
+        if (start) tx_shift <= {1'b1, data_in, 1'b0};
+        else if (symbol_edge && tx_running) tx_shift <= tx_shift >> 1;
     end
     assign serial_out = tx_running ? tx_shift[0] : 1'b1;
 
