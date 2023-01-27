@@ -23,6 +23,12 @@ module mem_controller #(
   reg [MEM_WIDTH-1:0] mem_din;
   wire [MEM_WIDTH-1:0] mem_dout;
 
+  reg [2:0] pkt_rd_cnt;
+  reg [MEM_WIDTH-1:0] cmd;
+  reg [MEM_WIDTH-1:0] addr;
+  reg [MEM_WIDTH-1:0] data;
+  reg handshake;
+  
   memory #(
     .MEM_WIDTH(MEM_WIDTH),
     .DEPTH(MEM_DEPTH)
@@ -55,11 +61,7 @@ module mem_controller #(
 
   end
 
-  reg [2:0] pkt_rd_cnt;
-  reg [MEM_WIDTH-1:0] cmd;
-  reg [MEM_WIDTH-1:0] addr;
-  reg [MEM_WIDTH-1:0] data;
-  reg handshake;
+
 
 
   always @(*) begin
@@ -138,10 +140,8 @@ module mem_controller #(
         end
     end
 
-  /* TODO: MODIFY THIS */
   assign state_leds = curr_state;
 
-  /* TODO: MODIFY/REMOVE THIS */
   assign rx_fifo_rd_en = rd_en;
   assign tx_fifo_wr_en = wr_en;
   assign dout = mem_dout;

@@ -128,7 +128,7 @@ module z1top #(
       .state_leds(mem_state_leds)
     );
 
-/*
+
 //---------------------- Audio Code Below (Extra Credit) ---------------------
     
     wire [9:0] code;
@@ -168,7 +168,5 @@ module z1top #(
     );
 
     assign AUD_SD = switches_sync[1]; // Enable the audio output
-
-*/
 
 endmodule
